@@ -1,16 +1,13 @@
 const express = require('express');
 
+const UserController = require('./controllers/UserController');
+const SessionController = require('./controllers/SessionController');
+
 const routes = express.Router();
 
-routes.post('/users', (request, response) => {
-    const body = request.body;
+routes.post('/sessions', SessionController.create);
 
-    console.log(body);
-
-    return response.json({
-        evento: 'SECComp',
-        aluno: 'Daiki'
-    });
-});
+routes.get('/users', UserController.index);
+routes.post('/users', UserController.create);
 
 module.exports = routes;
