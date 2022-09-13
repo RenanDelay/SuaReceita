@@ -1,0 +1,2 @@
+#ignorando a pasta node_modules na hora do push
+node_modules
